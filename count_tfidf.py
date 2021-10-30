@@ -1,3 +1,9 @@
+import subprocess
+import sys
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+install('imdbpie')
+
 from imdbpie import Imdb
 import string
 import pprint
@@ -10,6 +16,7 @@ reviews = imdb.get_title_user_reviews("tt0245429")
 # print(imdb.search_for_title('spirited away'))
 # pprint.pprint(reviews.keys())
 # pprint.pprint(reviews['base'])
+
 
 # PROCESS DATA
 
@@ -196,5 +203,5 @@ def main():
     frequent_words = most_frequent(all_reviews, 30)
     common_words(frequent_words)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

@@ -3,4 +3,4 @@
 ### Project Overview
 
 
-![tfidf_frequency_analysis](images/output.png)
+![frequency_analysis](images/output.png)

@@ -4,7 +4,6 @@ import string
 imdb = Imdb()
 reviews = imdb.get_title_user_reviews("tt0245429")
 
-
 # pprint.pprint(reviews.keys())
 # pprint.pprint(reviews["reviews"])
 
@@ -69,13 +68,10 @@ def most_common(dict, n):
         print(f'{i+1}. {l[i][0]}')
  
 def main():
-    list_of_reviews = reviews_to_list(reviews)
-    dict_counter = count_words(list_of_reviews)
+    all_reviews = reviews_to_list(reviews)
+    dict_counter = count_words(all_reviews)
 
     most_common(dict_counter, 10)
-
-    # first = reviews_to_list(reviews)[0]
-    # words_to_list(first)
 
 if __name__ == '__main__':
     main()
