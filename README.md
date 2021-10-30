@@ -1,3 +1,2 @@
-# text-mining
-
-Please read the [instructions](project_report.md).
+### Wilson Ciputra
+Please find my report at [project_report](wilson_text_mining/project_report.md).
