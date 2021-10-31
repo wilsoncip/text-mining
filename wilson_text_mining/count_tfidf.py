@@ -1,16 +1,21 @@
+# TEXT_ANALYSIS USING TF-IDF
+
+# PACKAGE INSTALL
+# https://www.codegrepper.com/code-examples/python/run+pip+install+from+python+script
 import subprocess
 import sys
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 install('imdbpie')
 
+# IMPORTS
 from imdbpie import Imdb
 import string
 import pprint
 import math
 
-# RETRIEVING DATA
 
+# RETRIEVING DATA
 imdb = Imdb()
 reviews = imdb.get_title_user_reviews("tt0245429")
 # print(imdb.search_for_title('spirited away'))
@@ -19,8 +24,6 @@ reviews = imdb.get_title_user_reviews("tt0245429")
 
 
 # PROCESS DATA
-
-
 def reviews_to_list(reviews):
     """
     input: dictionary from imdb
@@ -31,7 +34,6 @@ def reviews_to_list(reviews):
         content = item["reviewText"]
         l.append(content)
     return l
-
 
 def clean_words_to_list(text):
     l = []
@@ -64,8 +66,6 @@ def clean_words_to_list(text):
 
 
 # TEXT AND WORD ANALYSIS
-
-
 def count_words(text):
     d = {}
     all_words = clean_words_to_list(text)
@@ -75,7 +75,6 @@ def count_words(text):
         else:
             d[word] += 1
     return d
-
 
 def unique_words(text):
     """
@@ -87,7 +86,6 @@ def unique_words(text):
         if word not in l:
             l.append(word)
     return l
-
 
 def unique_words_corpus(corpus):
     """
@@ -106,9 +104,7 @@ def unique_words_corpus(corpus):
     return l
 
 
-# TF-IDF ANALYSIS
-
-
+# TF-IDF ANALYSIS -- Learned all tf-idf functions through -> https://en.wikipedia.org/wiki/Tf%E2%80%93idf
 def term_frequency_dict(text):
     """
     returns the term frequency of one word as float
@@ -120,11 +116,9 @@ def term_frequency_dict(text):
             d[word] = f.count(word) / len(f)
     return d
 
-
 def inside_list(word, list):
     if word in list:
         return True
-
 
 def inverse_def_frequency(word, corpus):
     """
@@ -142,7 +136,6 @@ def inverse_def_frequency(word, corpus):
     idf = math.log(len(corpus) / count)
     return idf
 
-
 def idf_dict(corpus):
     """
     returns the idf constant of all words in a corpus
@@ -153,7 +146,6 @@ def idf_dict(corpus):
         if item not in d:
             d[item] = inverse_def_frequency(item, corpus)
     return d
-
 
 def tfidf_dict(corpus):
     idf = idf_dict(corpus)
@@ -195,13 +187,12 @@ def common_words(words):
     for item in final:
         print(f'   {item[1]}      {item[0]}')
 
+
 # TEST CODE
-
-
 def main():
     all_reviews = reviews_to_list(reviews)
     frequent_words = most_frequent(all_reviews, 30)
     common_words(frequent_words)
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
