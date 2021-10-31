@@ -15,7 +15,7 @@ From the first part of the project, the results were more or less to be exptecte
 
 ![frequency_analysis](images/output1.png)
 
-The second part is far more interesting, since the TF-IDF lgorithms reveal the more meangiful words that are hidden among the common wrods from part one. 
+The second part is far more interesting, since the TF-IDF lgorithms reveal the more meangiful words that are hidden among the common wrods from part one. From the exhbits below the first few results (e.g. kids, chihiro, parents) further reinforces that fact that the MC remains is the main focus of most reviews. There were also a few mentions regarding anime as a genre itself (e.g. movie, goood, many, much, anime), suggesting that plenty of these reviewers do not frequently encounter anime movies. Another conclusion from this anlysis suggest that all users are extremely unqiue with their use of words, as there are many words that are not common among other entries yet they are the most frequent/important words in their respective reviews. There is a large variety of words, and the two exhbits below are unable to display all the words avaible from the list. This explains why there are many words that only make one appearance in this analysis.
 
 ![frequency_analysis](images/output2.png) ![frequency_analysis](images/output3.png)
 
