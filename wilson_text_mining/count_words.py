@@ -70,7 +70,6 @@ def most_common(dict, n):
 def main():
     all_reviews = reviews_to_list(reviews)
     dict_counter = count_words(all_reviews)
-
     most_common(dict_counter, 10)
 
 if __name__ == '__main__':
